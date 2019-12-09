@@ -16,5 +16,11 @@
 // });
 
 
-Route::get('/','LoginController@index');
+Route::get('/','LoginController@index')->name('login');
 Route::post('/login','LoginController@post_login')->name('do_login') ;
+Route::get('/logout','UserController@logout');
+
+
+Route::group(['middleware'=>'auth'],function(){
+	Route::get('/user','UserController@index');
+});
