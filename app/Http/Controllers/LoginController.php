@@ -14,7 +14,7 @@ class LoginController extends Controller
     public function post_login(Request $request)
     {
     	if (auth()->attempt($request->only('email','password'))) {
-    		return "ok";
+    		return redirect('/user');
     	} else {
     		return "gagal";
     	}

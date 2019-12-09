@@ -8,7 +8,7 @@ class UserController extends Controller
 {
     public function index()
     {
-    	return "ok";
+    	return view('user.master');
     }
 
 
