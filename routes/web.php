@@ -18,7 +18,7 @@
 
 Route::get('/','LoginController@index')->name('login');
 Route::post('/login','LoginController@post_login')->name('do_login') ;
-Route::get('/logout','UserController@logout');
+Route::get('/logout','UserController@logout')->name('logout');
 
 
 Route::group(['middleware'=>'auth'],function(){
