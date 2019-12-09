@@ -17,3 +17,4 @@
 
 
 Route::get('/','LoginController@index');
+Route::post('/login','LoginController@post_login')->name('do_login') ;

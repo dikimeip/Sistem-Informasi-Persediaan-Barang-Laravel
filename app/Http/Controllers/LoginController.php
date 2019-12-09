@@ -10,4 +10,13 @@ class LoginController extends Controller
     {
     	return view('login');
     }
+
+    public function post_login(Request $request)
+    {
+    	if (auth()->attempt($request->only('email','password'))) {
+    		return "ok";
+    	} else {
+    		return "gagal";
+    	}
+    }
 }

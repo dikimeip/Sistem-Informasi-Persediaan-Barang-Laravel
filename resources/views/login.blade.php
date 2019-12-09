@@ -12,7 +12,7 @@
 	<br>
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<form action="" method="post">
+			<form action="{{route('do_login')}}" method="post">
 				{{csrf_field()}}
 				<div class="form-group">
 					<label>MASUKAN USERNAME ATAU EMAIL</label>
