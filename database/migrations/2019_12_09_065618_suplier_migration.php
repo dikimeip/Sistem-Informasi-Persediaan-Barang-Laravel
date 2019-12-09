@@ -13,7 +13,16 @@ class SuplierMigration extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('Suplier',function(Blueprint $table){
+            $table->bigIncrements('id');
+            $table->string('nama_suplier');
+            $table->string('alamat_suplier');
+            $table->string('no_hp_suplier');
+            $table->string('email_suplier');
+            $table->string('pj_suplier');
+            $table->date('tanggal_suplier');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class SuplierMigration extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Suplier');
     }
 }

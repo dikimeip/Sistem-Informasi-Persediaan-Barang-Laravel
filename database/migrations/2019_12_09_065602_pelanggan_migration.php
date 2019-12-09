@@ -13,7 +13,15 @@ class PelangganMigration extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('Pelanggan',function(Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nama_pelanggan');
+            $table->string('alamat_pelanggan');
+            $table->string('no_hp_pelanggan');
+            $table->string('email_pelanggan');
+            $table->string('foto_pelanggan');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class PelangganMigration extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Pelanggan');
     }
 }

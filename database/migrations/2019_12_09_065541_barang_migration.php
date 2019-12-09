@@ -13,7 +13,17 @@ class BarangMigration extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('Barang',function(Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nama_barang');
+            $table->string('kategori_barang');
+            $table->string('stok_barang');
+            $table->string('harga_barang');
+            $table->date('tgl_masuk_barang');
+            $table->date('expired_barang');
+            $table->string('foto_barang');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class BarangMigration extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Barang');
     }
 }
