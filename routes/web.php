@@ -30,4 +30,5 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::post('/barang/edit/{id}','BarangController@update')->name('user.do_edit_barang');
 	Route::get('/barang/delete/{id}','BarangController@destroy')->name('user.delete_barang');
 	Route::get('/barang/show/{id}','BarangController@show')->name('user.show_barang');
+	Route::post('/barang/cari','BarangController@search')->name('user.cari_barang');
 });

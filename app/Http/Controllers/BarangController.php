@@ -19,6 +19,15 @@ class BarangController extends Controller
         return view('user.barang',compact('barang'));
     }
 
+
+    public function search(Request $request)
+    {
+        $cari = $request->get('cari');
+        $barang = BarangModel::where('nama_barang','LIKE','%'.$cari.'%');
+        //var_dump($barang);
+        return view('user.barang',compact('barang'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -152,4 +161,5 @@ class BarangController extends Controller
         Session::flash('success','Data Success Delete');
         return redirect()->route('user.barang');
     }
+
 }
