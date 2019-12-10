@@ -39,10 +39,28 @@ class BarangController extends Controller
         $this->validate($request,[
             'nama' => 'required',
             'kategori' => 'required',
-            'stok' => 'numeric|required|size:3',
+            'stok' => 'numeric|required',
             'harga' => 'numeric|required',
             'exp' => 'required',
         ]);
+
+        $file = $request->file('foto');
+        $org = $file->getClientOriginalName();
+        $path = 'image';
+        $file->move($path,$org);
+
+        $BarangModel = new BarangModel;
+        $BarangModel->nama_barang = $request->nama;
+        $BarangModel->kategori_barang = $request->kategori;
+        $BarangModel->stok_barang = $request->stok;
+        $BarangModel->harga_barang = $request->harga;
+        $BarangModel->tgl_masuk_barang = date('Y-m-d');
+        $BarangModel->expired_barang = $request->exp;
+        $BarangModel->foto_barang = $org;
+        $BarangModel->save();
+
+        //Session::flash('success','Data Success Submit');
+        return redirect()->route('user.barang');
     }
 
     /**
