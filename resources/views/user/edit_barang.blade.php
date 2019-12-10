@@ -1,7 +1,7 @@
 @extends('master.master')
 @section('isi')
 	<h1>EDIT BARANG</h1>
-	<form action="{{route('user.')}}" method="post" enctype="multipart/form-data">
+	<form action="{{route('user.do_edit_barang',$data->id)}}" method="post" enctype="multipart/form-data">
 	{{csrf_field()}}
 	<div class="form-group">
 		<label>Masukan Nama Barang</label>

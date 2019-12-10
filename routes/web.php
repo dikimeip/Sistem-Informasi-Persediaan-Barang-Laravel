@@ -26,7 +26,7 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('/barang','BarangController@index')->name('user.barang');
 	Route::get('/barang/tambah','BarangController@create')->name('user.barang_tambah');
 	Route::post('/barang/tambah','BarangController@store')->name('user.do_barang_tambah');
-	Route::get('/barang/edit/{id}','BarangController@show')->name('user.edit_barang');
-
+	Route::get('/barang/edit/{id}','BarangController@edit')->name('user.edit_barang');
+	Route::post('/barang/edit/{id}','BarangController@update')->name('user.do_edit_barang');
 
 });

@@ -72,8 +72,7 @@ class BarangController extends Controller
      */
     public function show($id)
     {
-        $data = BarangModel::find($id);
-        return view('user.edit_barang',compact('data'));
+
     }
 
     /**
@@ -84,7 +83,8 @@ class BarangController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = BarangModel::find($id);
+        return view('user.edit_barang',compact('data'));
     }
 
     /**
@@ -96,7 +96,30 @@ class BarangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'nama' => 'required',
+            'kategori' => 'required',
+            'stok' => 'numeric|required',
+            'harga' => 'numeric|required',
+            'exp' => 'required',
+        ]);
+
+        $foto = $request->file('foto');
+        if ($foto == "") {
+
+            $BarangModel = BarangModel::find($id);
+            $BarangModel->nama_barang = $request->nama;
+            $BarangModel->kategori_barang = $request->kategori;
+            $BarangModel->stok_barang = $request->stok;
+            $BarangModel->harga_barang = $request->harga;
+            $BarangModel->expired_barang = $request->exp;
+            $BarangModel->save();
+
+            Session::flash('success','Data Success Update');
+            return redirect()->route('user.barang');
+        } else {
+            
+        }
     }
 
     /**
