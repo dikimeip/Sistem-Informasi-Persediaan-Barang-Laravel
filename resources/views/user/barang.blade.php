@@ -37,7 +37,7 @@
 		<td>{{$b->harga_barang}}</td>
 		<td>{{$b->expired_barang}}</td>
 		<td>
-			<a href="" class="btn btn-warning btn-sm">EDIT</a>
+			<a href="{{route('user.edit_barang',$b->id)}}" class="btn btn-warning btn-sm">EDIT</a>
 			<a href="" class="btn btn-danger btn-sm">HAPUS</a>
 			<a href="" class="btn btn-success btn-sm">SHOW</a>
 		</td>
