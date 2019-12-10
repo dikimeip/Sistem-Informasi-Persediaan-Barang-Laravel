@@ -28,5 +28,6 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::post('/barang/tambah','BarangController@store')->name('user.do_barang_tambah');
 	Route::get('/barang/edit/{id}','BarangController@edit')->name('user.edit_barang');
 	Route::post('/barang/edit/{id}','BarangController@update')->name('user.do_edit_barang');
+	Route::get('/barang/delete/{id}','BarangController@destroy')->name('user.delete_barang');
 
 });

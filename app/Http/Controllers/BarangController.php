@@ -146,6 +146,9 @@ class BarangController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $BarangModel = BarangModel::find($id);
+        $BarangModel->delete();
+        Session::flash('success','Data Success Delete');
+        return redirect()->route('user.barang');
     }
 }
