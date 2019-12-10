@@ -25,5 +25,6 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('/user','UserController@index')->name('user.index') ;
 	Route::get('/barang','BarangController@index')->name('user.barang');
 	Route::get('/barang/tambah','BarangController@create')->name('user.barang_tambah');
+	Route::post('/barang/tambah','BarangController@store')->name('user.do_barang_tambah');
 
 });

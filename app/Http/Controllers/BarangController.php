@@ -36,7 +36,13 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nama' => 'required',
+            'kategori' => 'required',
+            'stok' => 'numeric|required|size:3',
+            'harga' => 'numeric|required',
+            'exp' => 'required',
+        ]);
     }
 
     /**
