@@ -4,7 +4,7 @@
 <br>
 <div class="row">
 	<div class="col-md-9">
-		<a href="" class="btn btn-info">TAMBAH</a>
+		<a href="{{route('user.barang_tambah')}}" class="btn btn-info">TAMBAH</a>
 	</div>
 	<div class="col-md-3">
 		<form>

@@ -24,4 +24,6 @@ Route::get('/logout','UserController@logout')->name('logout');
 Route::group(['middleware'=>'auth'],function(){
 	Route::get('/user','UserController@index')->name('user.index') ;
 	Route::get('/barang','BarangController@index')->name('user.barang');
+	Route::get('/barang/tambah','BarangController@create')->name('user.barang_tambah');
+
 });

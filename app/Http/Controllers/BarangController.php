@@ -25,7 +25,7 @@ class BarangController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.tambah_barang');
     }
 
     /**
