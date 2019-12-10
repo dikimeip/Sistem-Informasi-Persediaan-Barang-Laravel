@@ -73,7 +73,7 @@ class BarangController extends Controller
     public function show($id)
     {
         $data = BarangModel::find($id);
-        dd($data);
+        return view('user.edit_barang',compact('data'));
     }
 
     /**
