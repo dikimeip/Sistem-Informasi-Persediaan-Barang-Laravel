@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BarangModel;
 use Illuminate\Http\Request;
+use Session;
 
 class BarangController extends Controller
 {
@@ -59,7 +60,7 @@ class BarangController extends Controller
         $BarangModel->foto_barang = $org;
         $BarangModel->save();
 
-        //Session::flash('success','Data Success Submit');
+        Session::flash('success','Data Success Submit');
         return redirect()->route('user.barang');
     }
 

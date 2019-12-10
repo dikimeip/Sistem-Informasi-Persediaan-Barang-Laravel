@@ -14,7 +14,11 @@
 		</form>
 	</div>
 </div>
-
+@if(Session::has('success'))
+	<div class="alert alert-success">
+		<p>{{Session::get('success')}}</p>
+	</div>
+@endif
 <hr>
 <table class="table table-hover">
 	<tr>
