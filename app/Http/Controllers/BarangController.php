@@ -117,8 +117,24 @@ class BarangController extends Controller
 
             Session::flash('success','Data Success Update');
             return redirect()->route('user.barang');
+
         } else {
-            
+            $file = $request->file('foto');
+            $org = $file->getClientOriginalName();
+            $path = 'image';
+            $file->move($path,$org);
+
+            $BarangModel = BarangModel::find($id);
+            $BarangModel->nama_barang = $request->nama;
+            $BarangModel->kategori_barang = $request->kategori;
+            $BarangModel->stok_barang = $request->stok;
+            $BarangModel->harga_barang = $request->harga;
+            $BarangModel->expired_barang = $request->exp;
+            $BarangModel->foto_barang = $org;
+            $BarangModel->save();
+
+            Session::flash('success','Data Success Update');
+            return redirect()->route('user.barang');
         }
     }
 
