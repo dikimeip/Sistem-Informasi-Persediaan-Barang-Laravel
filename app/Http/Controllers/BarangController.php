@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BarangModel;
 use Illuminate\Http\Request;
 
 class BarangController extends Controller
@@ -13,7 +14,8 @@ class BarangController extends Controller
      */
     public function index()
     {
-        return view('user.barang');
+        $barang = BarangModel::all();
+        return view('user.barang',compact('barang'));
     }
 
     /**
