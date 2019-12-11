@@ -2,7 +2,7 @@
 @section('isi')
 <h1>EDIT SUPLIER</h1>
 <hr>
-<form action="{{route('user.do_tambah_suplier')}}" method="post">
+<form action="{{route('user.do_edit_suplier',$data->id)}}" method="post">
 	{{csrf_field()}}
 	<div class="form-group">
 		<label>MASUKAN SUPLYER</label>

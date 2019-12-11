@@ -35,5 +35,6 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('/suplier/tambah','SuplierController@create')->name('user.tambah_suplier') ;
 	Route::post('/suplier/do_tambah','SuplierController@store')->name('user.do_tambah_suplier') ;
 	Route::get('/suplier/edit/{id}','SuplierController@edit')->name('user.editsuplier');
+	Route::post('/suplier/edit/{id}','SuplierController@update')->name('user.do_edit_suplier');
 
 });

@@ -13,7 +13,7 @@ class SuplierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() 
     {
         $data = SuplierModel::all();
         return view('user.suplier',compact('data'));
@@ -91,7 +91,24 @@ class SuplierController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $this->validate($request,[
+            'nama' => 'required',
+            'alamat' => 'required',
+            'hp' => 'required|numeric',
+            'email' => 'required|email',
+            'pj' => 'required',
+        ]);
+
+        $SuplierModel = SuplierModel::find($id);
+        $SuplierModel->nama_suplier = $request->nama;
+        $SuplierModel->alamat_suplier = $request->alamat;
+        $SuplierModel->no_hp_suplier = $request->hp;
+        $SuplierModel->email_suplier = $request->email;
+        $SuplierModel->pj_suplier = $request->pj;
+        $SuplierModel->save();
+
+        Session::flash('success','Data Berhasil Diubah');
+        return redirect()->route('user.suplier');
     }
 
     /**
