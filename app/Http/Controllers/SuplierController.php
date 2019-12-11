@@ -119,6 +119,10 @@ class SuplierController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $SuplierModel = SuplierModel::find($id);
+        $SuplierModel->delete();
+
+        Session::flash('success','Data Berhasil Dihapus');
+        return redirect()->route('user.suplier');
     }
 }

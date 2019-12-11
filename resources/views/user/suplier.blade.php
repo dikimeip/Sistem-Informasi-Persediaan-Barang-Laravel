@@ -39,7 +39,7 @@
 		<td>{{$b->pj_suplier}}</td>
 		<td>
 			<a href="{{route('user.editsuplier',$b->id)}}" class="btn btn-info btn-sm">EDIT</a>
-			<a href="" class="btn btn-danger btn-sm">HAPUS</a>
+			<a href="{{route('user.hapussuplier',$b->id)}}" onclick="return confirm('Yakin Data dihapus.?')" class="btn btn-danger btn-sm">HAPUS</a>
 		</td>
 	</tr>
 	@endforeach
