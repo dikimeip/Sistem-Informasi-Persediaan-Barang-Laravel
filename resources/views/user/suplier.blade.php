@@ -1,10 +1,10 @@
 @extends('master.master')
 @section('isi')
-<h1>DATA BARANG</h1>
+<h1>DATA SUPLIER</h1>
 <br>
 <div class="row">
 	<div class="col-md-9">
-		<a href="" class="btn btn-info">TAMBAH</a>
+		<a href="{{route('user.tambah_suplier')}}" class="btn btn-info">TAMBAH</a>
 	</div>
 	<div class="col-md-3">
 		<form action="" method="post">

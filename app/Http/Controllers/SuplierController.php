@@ -25,7 +25,7 @@ class SuplierController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.tambahsuplier');
     }
 
     /**
