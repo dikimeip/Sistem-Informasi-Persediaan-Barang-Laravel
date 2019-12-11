@@ -14,8 +14,8 @@ class PelangganController extends Controller
      */
     public function index()
     {
-        // $data = PelangganModel::all();
-        // return view('')
+        $data = PelangganModel::all();
+        return view('user.pelanggan',compact('data'));
     }
 
     /**
