@@ -38,7 +38,7 @@
 		<td>{{$b->email_suplier}}</td>
 		<td>{{$b->pj_suplier}}</td>
 		<td>
-			<a href="" class="btn btn-info btn-sm">DETAIL</a>
+			<a href="" class="btn btn-info btn-sm">EDIT</a>
 			<a href="" class="btn btn-danger btn-sm">HAPUS</a>
 		</td>
 	</tr>

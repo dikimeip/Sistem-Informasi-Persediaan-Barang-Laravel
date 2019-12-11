@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\SuplierModel;
+use Session;
 
 class SuplierController extends Controller
 {
@@ -43,6 +44,18 @@ class SuplierController extends Controller
             'email' => 'required|email',
             'pj' => 'required',
         ]);
+
+        $SuplierModel = new SuplierModel;
+        $SuplierModel->nama_suplier = $request->nama;
+        $SuplierModel->alamat_suplier = $request->alamat;
+        $SuplierModel->no_hp_suplier = $request->hp;
+        $SuplierModel->email_suplier = $request->email;
+        $SuplierModel->pj_suplier = $request->pj;
+        $SuplierModel->tanggal_suplier = date('Y-m-d');
+        $SuplierModel->save();
+
+        Session::flash('success','Data Berhasil Ditambahkan');
+        return redirect()->route('user.suplier');
     }
 
     /**
