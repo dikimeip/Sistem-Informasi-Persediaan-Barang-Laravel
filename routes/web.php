@@ -33,5 +33,5 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::post('/barang/cari','BarangController@search')->name('user.cari_barang');
 	Route::get('/suplier','SuplierController@index')->name('user.suplier') ;
 	Route::get('/suplier/tambah','SuplierController@create')->name('user.tambah_suplier') ;
-
+	Route::post('/suplier/do_tambah','SuplierController@store')->name('user.do_tambah_suplier') ;
 });

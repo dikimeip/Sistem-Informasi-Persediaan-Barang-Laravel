@@ -36,7 +36,13 @@ class SuplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nama' => 'required',
+            'alamat' => 'required',
+            'hp' => 'required|numeric',
+            'email' => 'required|email',
+            'pj' => 'required',
+        ]);
     }
 
     /**
