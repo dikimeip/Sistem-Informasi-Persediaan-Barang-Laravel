@@ -77,7 +77,9 @@ class SuplierController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $data = SuplierModel::find($id);
+        return view('user.edit_suplier',compact('data'));
     }
 
     /**
