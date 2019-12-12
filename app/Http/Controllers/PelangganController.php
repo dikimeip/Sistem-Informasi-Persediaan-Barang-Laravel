@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\PelangganModel;
+use Session;
 
 class PelangganController extends Controller
 {
@@ -39,7 +40,7 @@ class PelangganController extends Controller
         $this->validate($request,[
             'nama' => 'required',
             'alamat' => 'required',
-            'no' => 'required|numeric|max[12]',
+            'no' => 'required|numeric',
             'email' => 'required|email'
         ]);
 
@@ -47,6 +48,17 @@ class PelangganController extends Controller
         $org = $file->getClientOriginalName();
         $path = 'image';
         $file->move($path,$org);
+
+        $PelangganModel = new PelangganModel;
+        $PelangganModel->nama_pelanggan = $request->nama;
+        $PelangganModel->alamat_pelanggan = $request->alamat;
+        $PelangganModel->no_hp_pelanggan = $request->no;
+        $PelangganModel->email_pelanggan = $request->email;
+        $PelangganModel->foto_pelanggan = $org;
+        $PelangganModel->save();
+
+        Session::flash('success','data berhasil ditambahkan');
+        return redirect()->route('user.pelanggan');
 
     }
 
