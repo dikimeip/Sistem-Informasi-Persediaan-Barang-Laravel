@@ -4,7 +4,7 @@
 <br>
 <div class="row">
 	<div class="col-md-9">
-		<a href="" class="btn btn-info">TAMBAH</a>
+		<a href="{{route('user.tambahpelanggan')}}" class="btn btn-info">TAMBAH</a>
 	</div>
 	<div class="col-md-3">
 		<form action="" method="post">
@@ -38,8 +38,8 @@
 		<td>{{$b->email_pelanggan}}</td>
 		<td>{{$b->foto_pelanggan}}</td>
 		<td>
-			<a href="" class="btn btn-info btn-sm">EDIT</a>
-			<a href="" class="btn btn-danger btn-sm">HAPUS</a>
+			<a href="{{route('user.editpelanggan',$b->id)}}" class="btn btn-info btn-sm">EDIT</a>
+			<a href="{{route('user.deletepelanggan',$b->id)}}" class="btn btn-danger btn-sm">HAPUS</a>
 		</td>
 	</tr>
 	@endforeach

@@ -14,7 +14,7 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
+ 
 
 Route::get('/','LoginController@index')->name('login');
 Route::post('/login','LoginController@post_login')->name('do_login') ;
@@ -38,5 +38,8 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::post('/suplier/edit/{id}','SuplierController@update')->name('user.do_edit_suplier');
 	Route::get('/suplier/delete/{id}','SuplierController@destroy')->name('user.hapussuplier');
 	Route::get('/pelanggan','PelangganController@index')->name('user.pelanggan') ;
+	Route::get('/pelanggan/tambah','PelangganController@create')->name('user.tambahpelanggan');
+	Route::get('/pelanggan/edit/{id}','PelangganController@edit')->name('user.editpelanggan');
+	Route::get('/pelanggan/delete/{id}','PelangganController@destroy')->name('user.deletepelanggan');
 
 });
