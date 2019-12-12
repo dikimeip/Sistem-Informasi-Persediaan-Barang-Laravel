@@ -112,7 +112,21 @@ class PelangganController extends Controller
             Session::flash('success','data berhasil diupdate');
             return redirect()->route('user.pelanggan');
         } else {
-            return "ada";
+            $file = $request->file('foto');
+            $org = $file->getClientOriginalName();
+            $path = 'image';
+            $file->move($path,$org);
+
+            $PelangganModel =PelangganModel::find($id);
+            $PelangganModel->nama_pelanggan = $request->nama;
+            $PelangganModel->alamat_pelanggan = $request->alamat;
+            $PelangganModel->no_hp_pelanggan = $request->no;
+            $PelangganModel->email_pelanggan = $request->email;
+            $PelangganModel->foto_pelanggan = $org;
+            $PelangganModel->save();
+            Session::flash('success','data berhasil diupdate');
+            return redirect()->route('user.pelanggan');
+
         }
     }
 
