@@ -36,7 +36,7 @@
 		<td>{{$b->alamat_pelanggan}}</td>
 		<td>{{$b->no_hp_pelanggan}}</td>
 		<td>{{$b->email_pelanggan}}</td>
-		<td>{{$b->foto_pelanggan}}</td>
+		<td><img style="width: 50px" src="{{asset('image/'.$b->foto_pelanggan)}}"></td>
 		<td>
 			<a href="{{route('user.editpelanggan',$b->id)}}" class="btn btn-info btn-sm">EDIT</a>
 			<a href="{{route('user.deletepelanggan',$b->id)}}" onclick="return confirm('Yakin Akan Menghapus Data..??')" class="btn btn-danger btn-sm">HAPUS</a>
