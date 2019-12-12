@@ -39,7 +39,7 @@
 		<td>{{$b->foto_pelanggan}}</td>
 		<td>
 			<a href="{{route('user.editpelanggan',$b->id)}}" class="btn btn-info btn-sm">EDIT</a>
-			<a href="{{route('user.deletepelanggan',$b->id)}}" class="btn btn-danger btn-sm">HAPUS</a>
+			<a href="{{route('user.deletepelanggan',$b->id)}}" onclick="return confirm('Yakin Akan Menghapus Data..??')" class="btn btn-danger btn-sm">HAPUS</a>
 		</td>
 	</tr>
 	@endforeach

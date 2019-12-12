@@ -138,6 +138,10 @@ class PelangganController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $PelangganModel = PelangganModel::find($id);
+        $PelangganModel->delete();
+        Session::flash('success','Success Hapus Data');
+        return redirect()->route('user.pelanggan');
+
     }
 }
