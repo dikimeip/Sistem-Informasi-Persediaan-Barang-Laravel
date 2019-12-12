@@ -36,7 +36,12 @@ class PelangganController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no' => 'required|numeric|max[12]',
+            'email' => 'required|email'
+        ]);
     }
 
     /**

@@ -41,5 +41,7 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('/pelanggan/tambah','PelangganController@create')->name('user.tambahpelanggan');
 	Route::get('/pelanggan/edit/{id}','PelangganController@edit')->name('user.editpelanggan');
 	Route::get('/pelanggan/delete/{id}','PelangganController@destroy')->name('user.deletepelanggan');
+	Route::post('/pelanggan/do_tambah','PelangganController@store')->name('user.do_tambahpelanggan') ;
+
 
 });
