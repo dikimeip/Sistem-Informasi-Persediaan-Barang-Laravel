@@ -42,6 +42,12 @@ class PelangganController extends Controller
             'no' => 'required|numeric|max[12]',
             'email' => 'required|email'
         ]);
+
+        $file = $request->file('foto');
+        $org = $file->getClientOriginalName();
+        $path = 'image';
+        $file->move($path,$org);
+
     }
 
     /**
