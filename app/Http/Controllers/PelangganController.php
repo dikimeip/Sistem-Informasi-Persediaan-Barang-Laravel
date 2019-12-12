@@ -94,7 +94,19 @@ class PelangganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no' => 'required|numeric',
+            'email' => 'required|email'
+        ]);
+
+        $foto = $request->file('foto');
+        if ($foto == "") {
+            return "Kosong";
+        } else {
+            return "ada";
+        }
     }
 
     /**

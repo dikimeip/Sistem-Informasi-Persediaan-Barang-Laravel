@@ -3,7 +3,7 @@
 <h1>TAMBAH PELANGGAN</h1>
 <br>
 <hr>
-<form action="" method="post" enctype="multipart/form-data">
+<form action="{{route('user.do_edit_pelanggan',$data->id)}}" method="post" enctype="multipart/form-data">
 	{{csrf_field()}}
 	<div class="form-group">
 		<label>MASUKAN NAMA PELANGGAN</label>
