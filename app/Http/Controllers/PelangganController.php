@@ -81,7 +81,8 @@ class PelangganController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = PelangganModel::find($id);
+        return view('user.editpelanggan',compact('data'));
     }
 
     /**
