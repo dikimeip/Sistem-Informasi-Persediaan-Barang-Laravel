@@ -103,7 +103,14 @@ class PelangganController extends Controller
 
         $foto = $request->file('foto');
         if ($foto == "") {
-            return "Kosong";
+            $PelangganModel =PelangganModel::find($id);
+            $PelangganModel->nama_pelanggan = $request->nama;
+            $PelangganModel->alamat_pelanggan = $request->alamat;
+            $PelangganModel->no_hp_pelanggan = $request->no;
+            $PelangganModel->email_pelanggan = $request->email;
+            $PelangganModel->save();
+            Session::flash('success','data berhasil diupdate');
+            return redirect()->route('user.pelanggan');
         } else {
             return "ada";
         }
