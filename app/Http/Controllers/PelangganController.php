@@ -25,7 +25,7 @@ class PelangganController extends Controller
      */
     public function create()
     {
-        // 
+        return view('user.tambahpelanggan');
     }
 
     /**
