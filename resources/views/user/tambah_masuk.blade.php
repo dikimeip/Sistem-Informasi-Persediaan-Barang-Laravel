@@ -2,6 +2,11 @@
 @section('isi')
 <h1>TAMBAH TRANSAKSI MASUK</h1>
 <hr>
+@if(Session::has('success'))
+	<div class="alert alert-success">
+		<p>{{Session::get('success')}}</p>
+	</div>
+@endif
 <form action="{{route('user.do_tambah_masuk')}}" method="post">
 	{{csrf_field()}}
 	<div class="form-group">
@@ -16,7 +21,7 @@
 		<label>MASUKAN NAMA SUPLIER</label>
 		<select name="suplier" class="form-control">
 			@foreach($suplier as $s)
-				<option value="{{$s -> id}}">{{$s->nama_suplier}}</option>
+				<option value="{{$s->id}}">{{$s->nama_suplier}}</option>
 			@endforeach
 		</select>
 	</div>
