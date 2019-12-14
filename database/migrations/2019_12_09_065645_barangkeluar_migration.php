@@ -15,10 +15,10 @@ class BarangkeluarMigration extends Migration
     {
         Schema::create('Keluar',function(Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('Pelanggan_id');
-            $table->unsignedBigInteger('Barang_id');
-            $table->foreign('Pelanggan_id')->references('id')->on('Pelanggan')->onDelete('cascade');
-            $table->foreign('Barang_id')->references('id')->on('Barang')->onDelete('cascade');
+            $table->unsignedBigInteger('pelanggan_id');
+            $table->unsignedBigInteger('barang_id');
+            $table->foreign('pelanggan_id')->references('id')->on('Pelanggan')->onDelete('cascade');
+            $table->foreign('barang_id')->references('id')->on('Barang')->onDelete('cascade');
             $table->date('tgl_keluar');
             $table->string('jumlah_keluar');
             $table->timestamps();

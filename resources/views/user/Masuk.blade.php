@@ -13,4 +13,18 @@
 		</form>
 	</div>
 </div>
+<table class="table table-hover">
+	<tr>
+		<th>NAMA BARANG</th>
+		<th>NAMA SUPLIER</th>
+		<th>TANGGAL MASUK</th>
+		<th>JUMLAH</th>
+		<th>AKSI</th>
+	</tr>
+	@foreach($data as $d)
+	<tr>
+		<td>{{$d->Barang->nama_barang}}</td>
+	</tr>
+	@endforeach
+</table>
 @endsection

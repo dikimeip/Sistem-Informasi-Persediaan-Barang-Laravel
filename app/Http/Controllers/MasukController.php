@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\MasukModel;
 
 class MasukController extends Controller
 {
@@ -13,7 +14,9 @@ class MasukController extends Controller
      */
     public function index()
     {
-        return view('user.masuk');
+        $data = MasukModel::get();
+        //dd($data);
+        return view('user.masuk',compact('data'));
     }
 
     /**
