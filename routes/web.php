@@ -45,6 +45,8 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::post('/pelanggan/edit/{id}','PelangganController@update')->name('user.do_edit_pelanggan');
 	Route::get('/masuk','MasukController@index')->name('user.masuk') ;
 	Route::get('/masuk/tambah','MasukController@create')->name('user.tambah_masuk') ;
+	Route::post('/masuk/do_tambah','MasukController@store')->name('user.do_tambah_masuk') ;
+
 
 
 });

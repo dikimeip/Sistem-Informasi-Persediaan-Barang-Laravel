@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\MasukModel;
 use App\BarangModel;
 use App\SuplierModel;
+use Session;
 
 class MasukController extends Controller
 {
@@ -40,7 +41,20 @@ class MasukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $MasukModel = new MasukModel;
+        $MasukModel->suplier_id = $request->barang;
+        $MasukModel->barang_id = $request->suplier;
+        $MasukModel->tgl_masuk = date('Y-m-d');
+        $MasukModel->jumlah_masuk = $request->jumlah;
+        $MasukModel->save();
+
+        $BarangModel = BarangModel::find($request->barang);
+        $BarangModel->stok_barang = $BarangModel->stok_barang + $request->jumlah;
+        $BarangModel->save();
+
+        Session::flash('success','Data success Input');
+        return redirect()->route('user.masuk');
+
     }
 
     /**
