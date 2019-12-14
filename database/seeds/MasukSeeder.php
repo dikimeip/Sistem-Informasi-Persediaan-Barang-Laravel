@@ -13,8 +13,8 @@ class MasukSeeder extends Seeder
     public function run()
     {
         MasukModel::create([
-        	'Suplier_id' => 2,
-        	'Barang_id' => 14,
+        	'Suplier_id' => 1,
+        	'Barang_id' => 1,
         	'tgl_masuk' => '2019-12-14',
         	'jumlah_masuk' => 5
         ]);

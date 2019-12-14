@@ -11,12 +11,12 @@ class MasukModel extends Model
 
 	public function Barang()
 	{
-		return $this->belongsToMany('App\BarangModel');
+		return $this->belongsTo('App\BarangModel');
 	}
 
 	public function Suplier()
 	{
-		return $this->belongsToMany('App\SuplierModel');
+		return $this->belongsTo('App\SuplierModel');
 	}
 
 }

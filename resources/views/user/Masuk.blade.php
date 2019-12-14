@@ -24,6 +24,13 @@
 	@foreach($data as $d)
 	<tr>
 		<td>{{$d->Barang->nama_barang}}</td>
+		<td>{{$d->Suplier->nama_suplier}}</td>
+		<td>{{$d->tgl_masuk}}</td>
+		<td>{{$d->jumlah_masuk}}</td>
+		<td>
+			<a href="" class="btn btn-info">SHOW</a>
+			<a href="" class="btn btn-danger">HAPUS</a>
+		</td>
 	</tr>
 	@endforeach
 </table>
