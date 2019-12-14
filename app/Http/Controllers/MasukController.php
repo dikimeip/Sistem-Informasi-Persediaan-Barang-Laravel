@@ -52,7 +52,7 @@ class MasukController extends Controller
         $BarangModel->stok_barang = $BarangModel->stok_barang + $request->jumlah;
         $BarangModel->save();
 
-        Session::flash('success','Data success Input');
+        Session::flash('success','Data Success Submit');
         return redirect()->route('user.masuk');
 
     }

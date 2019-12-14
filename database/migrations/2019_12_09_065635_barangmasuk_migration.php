@@ -17,10 +17,10 @@ class BarangmasukMigration extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('suplier_id');
             $table->unsignedBigInteger('barang_id');
-            $table->foreign('suplier_id')->references('id')->on('Suplier')->onDelete('cascade');
-            $table->foreign('barang_id')->references('id')->on('Barang')->onDelete('cascade');
+            $table->foreign('suplier_id')->references('id')->on('suplier')->onDelete('cascade');
+            $table->foreign('barang_id')->references('id')->on('barang')->onDelete('cascade');
             $table->date('tgl_masuk');
-            $table->string('jumlah_masuk');
+            $table->integer('jumlah_masuk');
             $table->timestamps();
         });
     }

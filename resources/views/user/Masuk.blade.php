@@ -13,6 +13,11 @@
 		</form>
 	</div>
 </div>
+@if(Session::has('success'))
+	<div class="alert alert-success">
+		<p>{{Session::get('success')}}</p>
+	</div>
+@endif
 <table class="table table-hover">
 	<tr>
 		<th>NAMA BARANG</th>

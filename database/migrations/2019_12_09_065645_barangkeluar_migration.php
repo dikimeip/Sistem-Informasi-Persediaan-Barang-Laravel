@@ -17,10 +17,10 @@ class BarangkeluarMigration extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('pelanggan_id');
             $table->unsignedBigInteger('barang_id');
-            $table->foreign('pelanggan_id')->references('id')->on('Pelanggan')->onDelete('cascade');
-            $table->foreign('barang_id')->references('id')->on('Barang')->onDelete('cascade');
+            $table->foreign('pelanggan_id')->references('id')->on('pelanggan')->onDelete('cascade');
+            $table->foreign('barang_id')->references('id')->on('barang')->onDelete('cascade');
             $table->date('tgl_keluar');
-            $table->string('jumlah_keluar');
+            $table->integer('jumlah_keluar');
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class BarangMigration extends Migration
             $table->bigIncrements('id');
             $table->string('nama_barang');
             $table->string('kategori_barang');
-            $table->string('stok_barang');
+            $table->integer('stok_barang');
             $table->string('harga_barang');
             $table->date('tgl_masuk_barang');
             $table->date('expired_barang');
