@@ -8,7 +8,7 @@
 	<div class="col-md-4">
 		<form>
 			<div class="form-group">
-				<input type="text" name="cari" class="form-control">
+				<input type="text" name="cari" class="form-control" placeholder="Masukan Tanggal Masuk">
 			</div>
 		</form>
 	</div>
@@ -33,7 +33,7 @@
 		<td>{{$d->tgl_masuk}}</td>
 		<td>{{$d->jumlah_masuk}}</td>
 		<td>
-			<a href="" class="btn btn-info">SHOW</a>
+			<a href="{{route('user.show_masuk',$d->id)}}" class="btn btn-info">SHOW</a>
 			<a href="" class="btn btn-danger">HAPUS</a>
 		</td>
 	</tr>
