@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\MasukModel;
+use App\BarangModel;
+use App\SuplierModel;
 
 class MasukController extends Controller
 {
@@ -14,8 +16,7 @@ class MasukController extends Controller
      */
     public function index()
     {
-        $data = MasukModel::get();
-        //dd($data);
+        $data = MasukModel::all();
         return view('user.masuk',compact('data'));
     }
 
@@ -26,7 +27,9 @@ class MasukController extends Controller
      */
     public function create()
     {
-        return view('user.tambah_masuk');
+        $barang = BarangModel::all();
+        $suplier = SuplierModel::all();
+        return view('user.tambah_masuk',compact('barang','suplier'));
     }
 
     /**

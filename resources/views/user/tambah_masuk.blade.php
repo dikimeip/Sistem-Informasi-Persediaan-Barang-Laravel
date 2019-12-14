@@ -6,13 +6,17 @@
 	<div class="form-group">
 		<label>MASUKAN NAMA BARANG</label>
 		<select name="barang" class="form-control">
-			
+			@foreach($barang as $b)
+				<option>{{$b->nama_barang}}</option>
+			@endforeach
 		</select>
 	</div>
 	<div class="form-group">
 		<label>MASUKAN NAMA SUPLIER</label>
 		<select name="suplier" class="form-control">
-			
+			@foreach($suplier as $s)
+				<option>{{$s->nama_suplier}}</option>
+			@endforeach
 		</select>
 	</div>
 	<div class="form-group">
