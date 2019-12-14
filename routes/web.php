@@ -47,6 +47,6 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('/masuk/tambah','MasukController@create')->name('user.tambah_masuk') ;
 	Route::post('/masuk/do_tambah','MasukController@store')->name('user.do_tambah_masuk') ;
 	Route::get('/masuk/show/{id}','MasukController@show')->name('user.show_masuk');
-
+	Route::get('/masuk/delete/{id}','MasukController@destroy')->name('user.hapusmasuk');
 
 });

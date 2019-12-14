@@ -34,7 +34,7 @@
 		<td>{{$d->jumlah_masuk}}</td>
 		<td>
 			<a href="{{route('user.show_masuk',$d->id)}}" class="btn btn-info">SHOW</a>
-			<a href="" class="btn btn-danger">HAPUS</a>
+			<a href="{{route('user.hapusmasuk',$d->id)}}" class="btn btn-danger" onclick="return confirm('Hapus Data..??')">HAPUS</a>
 		</td>
 	</tr>
 	@endforeach

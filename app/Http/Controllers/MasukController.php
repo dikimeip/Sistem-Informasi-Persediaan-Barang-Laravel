@@ -100,6 +100,10 @@ class MasukController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $MasukModel = MasukModel::find($id);
+        $MasukModel->delete();
+
+        Session::flash('success','Data Deleted !');
+        return redirect()->route('user.masuk');
     }
 }
