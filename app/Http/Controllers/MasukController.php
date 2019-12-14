@@ -65,7 +65,8 @@ class MasukController extends Controller
      */
     public function show($id)
     {
-        return view('user.show_masuk');
+        $data = MasukModel::find($id);
+        return view('user.show_masuk',compact('data'));
     }
 
     /**
