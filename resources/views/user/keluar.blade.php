@@ -13,4 +13,13 @@
 		</form>
 	</div>
 </div>
+<table class="table table-hover">
+	<tr>
+		<th>NAMA PEMBELI</th>
+		<th>NAMA BARANG</th>
+		<th>TGL PEMBELIAN</th>
+		<th>JUMLAH</th>
+		<th>AKSI</th>
+	</tr>
+</table>
 @endsection

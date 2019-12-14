@@ -14,7 +14,8 @@ class KeluarController extends Controller
      */
     public function index()
     {
-        return view('user.keluar');
+        $data = KeluarModel::all();
+        return view('user.keluar',compact('data'));
     }
 
     /**
