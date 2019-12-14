@@ -43,7 +43,7 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('/pelanggan/delete/{id}','PelangganController@destroy')->name('user.deletepelanggan');
 	Route::post('/pelanggan/do_tambah','PelangganController@store')->name('user.do_tambahpelanggan');
 	Route::post('/pelanggan/edit/{id}','PelangganController@update')->name('user.do_edit_pelanggan');
-
+	Route::get('/masuk','MasukController@index')->name('user.masuk') ;
 
 
 });
