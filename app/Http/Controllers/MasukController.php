@@ -26,7 +26,7 @@ class MasukController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.tambah_masuk');
     }
 
     /**
