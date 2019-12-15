@@ -23,8 +23,7 @@ class BarangController extends Controller
     public function search(Request $request)
     {
         $cari = $request->get('cari');
-        $barang = BarangModel::where('nama_barang','LIKE','%'.$cari.'%');
-        //var_dump($barang);
+        $barang = BarangModel::where('nama_barang','LIKE','%'.$cari.'%')->get();
         return view('user.barang',compact('barang'));
     }
 
@@ -121,7 +120,7 @@ class BarangController extends Controller
             $BarangModel->nama_barang = $request->nama;
             $BarangModel->kategori_barang = $request->kategori;
             $BarangModel->stok_barang = $request->stok;
-            $BarangModel->harga_barang = $request->harga;
+            $BarangModel->harga_barang = $request->harga; 
             $BarangModel->expired_barang = $request->exp;
             $BarangModel->save();
 
@@ -161,5 +160,6 @@ class BarangController extends Controller
         Session::flash('success','Data Success Delete');
         return redirect()->route('user.barang');
     }
+
 
 }
