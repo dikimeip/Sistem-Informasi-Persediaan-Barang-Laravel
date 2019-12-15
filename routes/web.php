@@ -51,4 +51,5 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('/keluar','KeluarController@index')->name('user.keluar') ;
 	Route::get('/keluar/tambah','KeluarController@create')->name('user.tambahkeluar');
 	Route::post('/keluar/do_tambah','KeluarController@store')->name('user.do_masuk') ;
+	Route::get('/keluar/show/{id}','KeluarController@show')->name('user.show_keluar');
 });

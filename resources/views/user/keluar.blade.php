@@ -13,9 +13,9 @@
 		</form>
 	</div>
 </div>
-@if(session::has('success'))
+@if(Session::has('success'))
 	<div class="alert alert-info">
-		<p>{{session::get('success')}}</p>
+		<p>{{Session::get('success')}}</p>
 	</div>
 @endif
 <table class="table table-hover">
@@ -33,7 +33,7 @@
 		<td>{{$d->tgl_keluar}}</td>
 		<td>{{$d->jumlah_keluar}}</td>
 		<td>
-			<a href="" class="btn btn-info">DETAIL</a>
+			<a href="{{route('user.show_keluar',$d->id)}}" class="btn btn-info">DETAIL</a>
 			<a href="" class="btn btn-danger">HAPUS</a>
 		</td>
 	</tr>

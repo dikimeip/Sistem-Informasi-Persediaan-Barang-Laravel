@@ -67,7 +67,8 @@ class KeluarController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = KeluarModel::find($id);
+        return view('user.show_keluar',compact('data'));
     }
 
     /**
