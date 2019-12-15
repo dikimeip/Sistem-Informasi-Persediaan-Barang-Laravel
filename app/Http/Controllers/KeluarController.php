@@ -40,7 +40,19 @@ class KeluarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $KeluarModel = new KeluarModel;
+        $KeluarModel->pelanggan_id = $request->pelanggan;
+        $KeluarModel->barang_id = $request->barang;
+        $KeluarModel->tgl_keluar = date('Y-m-d');
+        $KeluarModel->jumlah_keluar = $request->jumlah;
+        $KeluarModel->save();
+
+        $BarangModel = BarangModel::find($request->barang);
+        $BarangModel->stok_barang = $BarangModel->stok_barang - $request->jumlah;
+        $BarangModel->save();
+
+
+
     }
 
     /**
