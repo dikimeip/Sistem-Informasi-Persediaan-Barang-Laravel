@@ -6,13 +6,17 @@
 	<div class="form-group">
 		<label>MASUKAN NAMA PELANGGAN</label>
 		<select name="pelanggan" class="form-control">
-			<option>COBA</option>
+			@foreach($pelanggan as $p)
+				<option value="{{$p->id}}">{{$p->nama_pelanggan}}</option>
+			@endforeach
 		</select>
 	</div>
 	<div class="form-group">
 		<label>MASUKAN NAMA BARANG</label>
 		<select name="barang" class="form-control">
-			<option>COBA</option>
+			@foreach($barang as $b)
+			<option value="{{$b->id}}">{{$b->nama_barang}}</option>
+			@endforeach
 		</select>
 	</div>
 	<div class="form-group">

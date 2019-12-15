@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\KeluarModel;
+use App\BarangModel;
+use App\PelangganModel;
 
 class KeluarController extends Controller
 {
@@ -25,7 +27,9 @@ class KeluarController extends Controller
      */
     public function create()
     {
-         return view('user.tambah_keluar');
+        $pelanggan = PelangganModel::all();
+        $barang = BarangModel::all();
+        return view('user.tambah_keluar',compact('pelanggan','barang'));
     }
 
     /**
