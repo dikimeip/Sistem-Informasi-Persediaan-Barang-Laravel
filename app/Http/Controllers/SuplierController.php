@@ -19,6 +19,13 @@ class SuplierController extends Controller
         return view('user.suplier',compact('data'));
     }
 
+    public function search(Request $request)
+    {
+        $cari = $request->get('cari');
+        $data = SuplierModel::where('nama_suplier','LIKE','%'.$cari.'%')->get();
+         return view('user.suplier',compact('data'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
