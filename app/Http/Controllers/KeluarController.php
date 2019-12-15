@@ -21,6 +21,13 @@ class KeluarController extends Controller
         return view('user.keluar',compact('data'));
     }
 
+     public function search(Request $request)
+    {
+        $cari = $request->get('cari');
+        $data = KeluarModel::where('tgl_keluar','LIKE','%'.$cari.'%')->get();
+        return view('user.keluar',compact('data'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
