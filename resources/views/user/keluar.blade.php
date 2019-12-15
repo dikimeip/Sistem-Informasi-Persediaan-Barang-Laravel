@@ -34,7 +34,7 @@
 		<td>{{$d->jumlah_keluar}}</td>
 		<td>
 			<a href="{{route('user.show_keluar',$d->id)}}" class="btn btn-info">DETAIL</a>
-			<a href="" class="btn btn-danger">HAPUS</a>
+			<a href="{{route('user.delete_keluar',$d->id)}}" onclick="return confirm('Hapus Data?')" class="btn btn-danger">HAPUS</a>
 		</td>
 	</tr>
 	@endforeach

@@ -102,6 +102,9 @@ class KeluarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $KeluarModel =  KeluarModel::find($id);
+        $KeluarModel->delete();
+        Session::flash('success','Data Berhasil Dihapus');
+        return redirect()->route('user.keluar');
     }
 }
