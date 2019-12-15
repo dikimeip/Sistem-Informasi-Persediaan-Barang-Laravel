@@ -3,7 +3,7 @@
 <h1>DATA BARANG KELUAR</h1>
 <div class="row">
 	<div class="col-md-8">
-		<a href="" class="btn btn-info">TAMBAH</a>
+		<a href="{{route('user.tambahkeluar')}}" class="btn btn-info">TAMBAH</a>
 	</div>
 	<div class="col-md-4">
 		<form>

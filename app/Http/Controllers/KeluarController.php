@@ -25,7 +25,7 @@ class KeluarController extends Controller
      */
     public function create()
     {
-        //
+         return view('user.tambah_keluar');
     }
 
     /**
