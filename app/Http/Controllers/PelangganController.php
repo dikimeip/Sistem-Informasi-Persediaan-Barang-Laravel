@@ -19,6 +19,13 @@ class PelangganController extends Controller
         return view('user.pelanggan',compact('data'));
     }
 
+     public function search(Request $request)
+    {
+        $cari = $request->get('cari');
+        $data = PelangganModel::where('nama_pelanggan','LIKE','%'.$cari.'%')->get();
+        return view('user.pelanggan',compact('data'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

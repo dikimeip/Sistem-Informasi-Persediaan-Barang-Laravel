@@ -7,7 +7,7 @@
 		<a href="{{route('user.tambahpelanggan')}}" class="btn btn-info">TAMBAH</a>
 	</div>
 	<div class="col-md-3">
-		<form action="" method="post">
+		<form action="{{route('user.cari_pelanggan')}}" method="post">
 			{{csrf_field()}}
 			<div class="form-group">
 				<input type="text" name="cari" class="form-control" placeholder="Masukan Nama Pelanggan">
