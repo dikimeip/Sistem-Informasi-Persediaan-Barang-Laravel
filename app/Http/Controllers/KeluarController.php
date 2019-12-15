@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\KeluarModel;
 use App\BarangModel;
 use App\PelangganModel;
+use Session;
 
 class KeluarController extends Controller
 {
@@ -50,6 +51,9 @@ class KeluarController extends Controller
         $BarangModel = BarangModel::find($request->barang);
         $BarangModel->stok_barang = $BarangModel->stok_barang - $request->jumlah;
         $BarangModel->save();
+
+        Session::flash('success','Data Berhasil Ditambahkan');
+        return redirect()->route('user.keluar');
 
 
 
