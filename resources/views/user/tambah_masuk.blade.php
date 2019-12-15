@@ -26,7 +26,7 @@
 		</select>
 	</div>
 	<div class="form-group">
-		<label>MASUKAN NAMA BARANG</label>
+		<label>MASUKAN JUMLAH BARANG</label>
 		<input type="number" name="jumlah" class="form-control" required="">
 	</div>
 	<input type="submit" value="SIMPAN" class="btn btn-info">

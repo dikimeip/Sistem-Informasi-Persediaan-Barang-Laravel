@@ -21,6 +21,14 @@ class MasukController extends Controller
         return view('user.masuk',compact('data'));
     }
 
+     public function search(Request $request)
+    {
+        $cari = $request->get('cari');
+        $data = MasukModel::where('tgl_masuk','LIKE','%'.$cari.'%')->get();
+        return view('user.masuk',compact('data'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

@@ -6,7 +6,8 @@
 		<a href="{{route('user.tambah_masuk')}}" class="btn btn-info">TAMBAH</a>
 	</div>
 	<div class="col-md-4">
-		<form>
+		<form action="{{route('user.cari_masuk')}}" method="post">
+			{{csrf_field()}}
 			<div class="form-group">
 				<input type="text" name="cari" class="form-control" placeholder="Masukan Tanggal Masuk">
 			</div>

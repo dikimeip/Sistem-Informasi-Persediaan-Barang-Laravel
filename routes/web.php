@@ -55,5 +55,5 @@ Route::group(['middleware'=>'auth'],function(){
 	Route::get('/keluar/delete/{id}','KeluarController@destroy')->name('user.delete_keluar');
 	Route::post('/suplier/cari','SuplierController@search')->name('user.search_suplier');
 	Route::post('/pelanggan/cari','PelangganController@search')->name('user.cari_pelanggan');
-
+	Route::post('/masuk/cari','MasukController@search')->name('user.cari_masuk');
 });
